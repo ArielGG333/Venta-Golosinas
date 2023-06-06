@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Web</title>
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!--NAVEGACION-->
+        <nav class="nav-main">
+            <img src="img/logo-js.png" alt="JavaScript Logo" class="nav-logo">
+            <ul class="nav-left">
+                <li><a href="#">App Web SPA</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="#inicio"><i class="fas fa-store"></i> Inicio</a></li>
+                <li><a href="#clientes"><i class="fas fa-user-friends"></i> Clientes</a></li>
+                <li><a href="#movimientos"><i class="fas fa-sort-amount-up-alt"></i> Movimientos</a></li>
+                <li class="caja" id="caja"></li>
+                <li><a onclick="agregarDinero()"><i class="fa-solid fa-plus"></i> <i class="fa-solid fa-coins"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+
+        <!--INICIO-->
+        <div class="inicio" id="inicio">
+            <div class="mensajeVerde" id="mensaje1"><b>Venta Exitosa!</b></div>
+            <div class="mensajeRojo" id="mensaje2"><b>Compra Exitosa!</b></div>
+            <h2>Mi Tienda</h1>
+                <h4>
+                    <i class="fas fa-search"></i> 
+                    <input type="text" id="inputBuscar" placeholder="Buscar producto (por código)" size="25">
+                </h4>
+                <button class="btnAzul" id="btnBuscar">Buscar</button>
+                <button class="btnAzul" id="btnMostrar">Mostrar todo</button>
+                <button class="btnAzul" id="btnStockCritico">Stock crítico</button>
+
+                <table class="tabla-productos">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Productos</th>
+                            <th>Precio de Venta</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listarProductos">
+
+                    </tbody>
+                </table>
+
+                <div class="modal-container" id="modalContainer1">
+                    <div class="modal">
+                        <h1>Ventana Modal de Ventas</h1>
+
+
+                        <div id="ventanaVentas"></div>
+                        <p><b>Clientes:</b></p> <select name="" id="llenarSelect"></select>
+
+                        <button class="btnVerde" id="btnVender">Vender</button>
+                        <button class="btnRojo" id="btnCancelar1">Cancelar</button>
+                    </div>
+                </div>
+
+                <div class="modal-container" id="modalContainer2">
+                    <div class="modal">
+                        <h1>Ventana Modal de Compras</h1>
+
+                        <div id="ventanaCompras"></div>
+
+                        <button class="btnVerde" id="btnComprar">Comprar</button>
+                        <button class="btnRojo" id="btnCancelar2">Cancelar</button>
+                    </div>
+                </div>
+        </div>
+        <hr>
+        <!--CLIENTES-->
+        <div class="clientes" id="clientes">
+
+            <h2>Clientes</h2>
+            <h4>
+                <i class="fa-solid fa-file-signature"></i>
+                <input type="text" id="nombreCliente" placeholder="Ingrese nombre">
+                <i class="fa-solid fa-phone"></i>
+                <input type="text" id="telefono" placeholder="Ingrese teléfono">
+            </h4>
+            <button class="btnAzul" id="btnRegistrarCliente">Registrar Cliente <i
+                    class="far fa-check-circle"></i></button>
+            <button class="btnAzul" id="btnGuardarEdit">Guardar edición <i class="fas fa-save"></i></button>
+
+            <table class="tabla-clientes">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Deudas</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listarClientes">
+
+                </tbody>
+            </table>
+        </div>
+        <hr>
+
+        <!--MOVIMIENTOS-->
+        <div class="movimientos" id="movimientos">
+            <h2>Movimientos en Caja</h2>
+            <button class="btnRojo" id="btnResetear" style="margin-bottom: 5px; margin-top: 10px;">Resetear movimientos <i class="fas fa-trash-alt"></i></button>
+            <table class="tabla-movimientos">
+                <thead>
+                    <tr>
+                        <th>Nro</th>
+                        <th>Tipo</th>
+                        <th>Cliente/Proveedor</th>
+                        <th>Medio de pago</th>
+                        <th>Concepto</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody id="listarMovimientos">
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <h3>Proyecto Final de Programación - Iván Kameyha <i class="far fa-copyright"></i></h3>
+    </footer>
+
+    <!--AXIOS JS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!--CUSTOM JS-->
+    <script src="app.js"></script>
+</body>
+
+</html>

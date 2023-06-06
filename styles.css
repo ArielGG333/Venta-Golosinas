@@ -1,0 +1,303 @@
+/* GENERAL------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #26262c;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23444b57' fill-opacity='0.64' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ff9d00;
+    border-radius: 10px;
+    border-right: 2px solid #26262C;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* BOTONES-------------------*/
+.btnVerde {
+    background: #47a386;
+    border: 0;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.btnVerde:hover {
+    background: #005c3f;
+    cursor: pointer;
+}
+
+.btnRojo {
+    background: #853939;
+    border: 0;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.btnRojo:hover {
+    background: #8a0606;
+    cursor: pointer;
+}
+
+.btnAzul {
+    background: #2f4f82;
+    border: 0;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.btnAzul:hover {
+    background: #042c6b;
+    cursor: pointer;
+}
+
+/* NAVEGACION------------------- */
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+
+.nav-main.active {
+    position: fixed;
+    width: 80%;
+    background: #2f3640;
+    padding: 15px;
+}
+
+.nav-logo {
+    width: 50px;
+}
+
+.nav-main ul {
+    display: flex;
+}
+
+.nav-main ul li {
+    padding: 10px;
+}
+
+.nav-main ul.nav-left {
+    font-size: 25px;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.nav-right a {
+    font-weight: bold;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.nav-right a:hover {
+    padding: 3px 10px;
+    background: #0AE44F;
+    color: black;
+    border-radius: 15px;
+}
+
+.caja {
+    background: #0AE44F;
+    border-radius: 30px;
+}
+
+.caja a {
+    color: black;
+}
+
+.caja a:hover {
+    padding: 0px 5px;
+}
+
+hr {
+    margin-bottom: 50px;
+    opacity: .2;
+}
+
+/* INICIO------------------- */
+.inicio {
+    margin-bottom: 50px;
+}
+
+.inicio h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background: #005c3f;
+    border-radius: 15px;
+    padding: 7px 10px;
+    width: 250px;
+    display: inline-block;
+}
+
+.tabla-productos {
+    text-align: center;
+    width: 100%;
+}
+
+.tabla-productos thead {
+    background: #0AE44F;
+    color: black;
+}
+
+.tabla-productos thead th{
+    padding: 0 50px;
+}
+
+.mensajeVerde {
+    opacity: 0;  
+    background: #47a386;
+    text-align: center;
+    border-radius: 15px;
+    transition: opacity 0.5s ease;
+    font-size: 0px;
+}
+
+.mensajeRojo {
+    opacity: 0;  
+    background: #853939;
+    text-align: center;
+    border-radius: 15px;
+    transition: opacity 0.5s ease;
+    font-size: 0px;
+}
+
+.showMensaje {
+    pointer-events: auto;
+    opacity: 1;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;  
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.5s ease;
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: #616161;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.modal h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#btnVender, #btnComprar {
+    margin-left: 60%;
+}
+
+.modal p {
+    opacity: 0.7;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/* CLIENTES------------------- */
+
+.clientes {
+    margin-bottom: 50px;
+}
+
+.clientes h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background: #005c3f;
+    border-radius: 15px;
+    padding: 7px 10px;
+    width: 420px;
+    display: inline-block;
+}
+
+.tabla-clientes {
+    text-align: center;
+    width: 100%;
+}
+
+.tabla-clientes thead {
+    background: #0AE44F;
+    color: black;
+}
+
+.tabla-clientes thead th {
+    padding: 0 50px;
+}
+
+/* MOVIMIENTOS------------------- */
+.movimientos {
+    margin-bottom: 50px;
+}
+
+.tabla-movimientos{
+    text-align: center;
+    width: 100%;
+}
+
+.tabla-movimientos thead {
+    background: #0AE44F;
+    color: black;
+}
+
+.tabla-movimientos thead th {
+    padding: 0 50px;
+}
+
+/* FOOTER------------------- */
+.footer {
+    background: #2f3640;
+    color: #616161;
+    font-size: 12px;
+    padding: 20px;
+    text-align: center;
+}
